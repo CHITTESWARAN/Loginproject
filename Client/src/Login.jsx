@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { useContext, useState} from 'react';
 import { Navigate } from 'react-router-dom';
 import { FaEyeSlash } from "react-icons/fa6";
+import { ToastContainer, toast } from 'react-toastify';
 import { IoEye } from "react-icons/io5";
 import { UserContext } from './UserContext';
 
@@ -23,12 +24,13 @@ const LoginPage = () => {
          let response=await axios.post("https://loginproject-l3rt.onrender.com/login", { username, password }, { withCredentials: true })
          console.log(response.data);
           login(username);
+          toast.success("Login successful")
          setRedirect(true);  
     }
      catch(error)
      {
         console.log(err.message); 
-        alert("Login failed")
+        toast.error("Error occured a login.") 
      }
   }
 

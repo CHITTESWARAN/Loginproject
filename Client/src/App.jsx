@@ -11,7 +11,7 @@ const App = () => {
     <>
     <UserProvider>
       <Navbar />
-      <div className='mt-28 text-2xl font-black text-black'>
+      <div className='mt-28 text-2xl font-light text-black'>
       <Routes>
       <Route path="/" element={<Index />} />
         <Route path="/login" element={<Login />} />

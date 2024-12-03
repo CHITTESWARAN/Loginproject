@@ -3,6 +3,7 @@ import axios from "axios";
 import {useNavigate} from  "react-router-dom"
 import { FaEyeSlash } from "react-icons/fa6";
 import { IoEye } from "react-icons/io5";
+import { toast } from 'react-toastify';
 
 const Registerpage = () => {
     const[username,setusername]=useState("");
@@ -19,8 +20,7 @@ const Registerpage = () => {
       
         const response= await axios.post("https://loginproject-l3rt.onrender.com/register",{username,password})
          localStorage.setItem("token",response.data.token)
-          alert("Registeration Successful")
-          
+          toast.success("Registeration successful") 
           setRedirect(true);
           
       }
