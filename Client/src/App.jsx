@@ -14,8 +14,8 @@ const App = () => {
     <UserProvider>
       <Navbar />
       <div className='mt-28 text-xl font-light text-black'>
+      <ToastContainer />
       <Routes>
-      <ToastContainer /> 
       <Route path="/" element={<Index />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} /> 
