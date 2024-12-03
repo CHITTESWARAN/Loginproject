@@ -6,7 +6,6 @@ import { Routes, Route } from 'react-router-dom';
 import { UserProvider } from './UserContext';
 import Index from './Index';
 import { ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
 
 const App = () => {
   return (
