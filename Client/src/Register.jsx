@@ -17,7 +17,7 @@ const Registerpage = () => {
       try{
 
       
-        const response= await axios.post("http://localhost:4000/register",{username,password})
+        const response= await axios.post("https://loginproject-l3rt.onrender.com/register",{username,password})
          localStorage.setItem("token",response.data.token)
           alert("Registeration Successful")
           setRedirect(true);

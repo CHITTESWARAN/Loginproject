@@ -20,7 +20,7 @@ const LoginPage = () => {
   async function handleLogin(e) {
     e.preventDefault();
     try{
-         let response=await axios.post("http://localhost:4000/login", { username, password }, { withCredentials: true })
+         let response=await axios.post("https://loginproject-l3rt.onrender.com/login", { username, password }, { withCredentials: true })
          console.log(response.data);
           login(username);
          setRedirect(true);  
