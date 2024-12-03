@@ -12,7 +12,7 @@
     
 
     //Middleware
-    app.use(cors({ origin: 'https://loginproject-1-iv5d.onrender.com', credentials: true })); 
+    app.use(cors({ origin: 'https://loginproject-1-iv5d.onrender.com/', credentials: true })); 
     app.use(express.json()); 
     app.use(bodyParser.urlencoded({ extended: true })); 
 

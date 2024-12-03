@@ -19,7 +19,7 @@ const Navbar = () => {
         <div className="bg-white rounded-full w-10 h-10 flex items-center justify-center">
           <span className="text-gray-800 font-bold">D</span>
         </div>
-        <h1 className="text-2xl font-bold tracking-wide">DealsDray</h1>
+        <h1 className="text-2xl font-bold tracking-wide">Mindmate</h1>
       </div>
 
    
