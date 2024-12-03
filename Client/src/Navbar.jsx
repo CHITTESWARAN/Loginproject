@@ -17,7 +17,7 @@ const Navbar = () => {
   
       <div className="flex items-center space-x-2">
         <div className="bg-white rounded-full w-10 h-10 flex items-center justify-center">
-          <span className="text-gray-800 font-bold">D</span>
+          <span className="text-gray-800 font-bold">C</span>
         </div>
         <h1 className="text-2xl font-bold tracking-wide">Mindmate</h1>
       </div>

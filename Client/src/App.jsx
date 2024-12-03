@@ -5,14 +5,17 @@ import Login from './Login';
 import { Routes, Route } from 'react-router-dom'; 
 import { UserContext, UserProvider } from './UserContext';
 import Index from './Index';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const App = () => {
   return (
     <>
     <UserProvider>
       <Navbar />
-      <div className='mt-28 text-2xl font-light text-black'>
+      <div className='mt-28 text-xl font-light text-black'>
       <Routes>
+      <ToastContainer /> 
       <Route path="/" element={<Index />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />

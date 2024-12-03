@@ -3,7 +3,7 @@ import axios from "axios";
 import {useNavigate} from  "react-router-dom"
 import { FaEyeSlash } from "react-icons/fa6";
 import { IoEye } from "react-icons/io5";
-import { toast } from 'react-toastify';
+import { toast,ToastContainer } from 'react-toastify';
 
 const Registerpage = () => {
     const[username,setusername]=useState("");
@@ -22,6 +22,7 @@ const Registerpage = () => {
          localStorage.setItem("token",response.data.token)
           toast.success("Registeration successful") 
           setRedirect(true);
+          navigate("/login");
           
       }
       
@@ -43,6 +44,7 @@ const Registerpage = () => {
        setShowPassword(!showPassword)
     }
   return (
+    <div>
     <form  className='max-w-[38%] mx-auto mt-32' onSubmit={handleRegisterpage}>
         <h1 className='w-full text-center my-12 text-3xl font-bold'>Register</h1>
       <input
@@ -68,6 +70,8 @@ const Registerpage = () => {
         Register
       </button>
     </form>
+    <ToastContainer />
+    </div>
   );
 };
 

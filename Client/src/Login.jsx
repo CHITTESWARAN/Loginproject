@@ -3,6 +3,7 @@ import React, { useContext, useState} from 'react';
 import { Navigate } from 'react-router-dom';
 import { FaEyeSlash } from "react-icons/fa6";
 import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { IoEye } from "react-icons/io5";
 import { UserContext } from './UserContext';
 
@@ -23,7 +24,7 @@ const LoginPage = () => {
     try{
          let response=await axios.post("https://loginproject-l3rt.onrender.com/login", { username, password }, { withCredentials: true })
          console.log(response.data);
-          login(username);
+          login(username); 
           toast.success("Login successful")
          setRedirect(true);  
     }
@@ -31,12 +32,13 @@ const LoginPage = () => {
      {
         console.log(err.message); 
         toast.error("Error occured a login.") 
+
      }
   }
 
   
   if (redirect) {
-    return <Navigate to="/" />;
+    return <Navigate to="/"/>;
   }
 
   // Toggle password visibility
@@ -57,7 +59,7 @@ const LoginPage = () => {
         />
         <div className="flex h-14">
           <input
-            type={showPassword ? "text" : "password"}
+            type={showPassword ? "text" :"password"}
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             placeholder="Password"
@@ -73,7 +75,8 @@ const LoginPage = () => {
         <button className="block w-full bg-gray-700 text-white rounded-md py-2" type="submit">
           Login
         </button>
-      </form>
+      </form> 
+      <ToastContainer />
     </div>
   );
 };
