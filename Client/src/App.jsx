@@ -3,7 +3,7 @@ import Navbar from './Navbar';
 import Register from './Register';
 import Login from './Login';
 import { Routes, Route } from 'react-router-dom'; 
-import { UserContext, UserProvider } from './UserContext';
+import { UserProvider } from './UserContext';
 import Index from './Index';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -18,7 +18,7 @@ const App = () => {
       <ToastContainer /> 
       <Route path="/" element={<Index />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
+        <Route path="/register" element={<Register />} /> 
       </Routes>
       </div>
       </UserProvider>
