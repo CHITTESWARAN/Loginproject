@@ -12,7 +12,7 @@
     
 
     //Middleware
-    app.use(cors({ origin: 'http://localhost:5173', credentials: true })); 
+    app.use(cors({ origin: 'https://loginproject-1-iv5d.onrender.com', credentials: true })); 
     app.use(express.json()); 
     app.use(bodyParser.urlencoded({ extended: true })); 
 
@@ -36,16 +36,15 @@
         return res.status(400).json({ message: "User not found" });
     }
 
-    // Check if the password is correct
+
     const isMatch = await bcrypt.compare(password, user.password);
     if (!isMatch) {
         return res.status(400).json({ message: "Invalid credentials" });
     }
 
-    // Create JWT token
     const token = jwt.sign({ userId: user._id }, process.env.JWT_SECRET);
 
-    // Send the token as a cookie
+    
     res.cookie('token', token, { httpOnly: true, secure: false});
 
     res.status(200).json({ message: "Login successful", token,username:username });
@@ -74,7 +73,7 @@
 
     })
 
-    // Start the server and listen on the defined PORT
+  
     app.listen(PORT, () => {
     console.log(`Server is running at http://localhost:${PORT}`); 
     });
